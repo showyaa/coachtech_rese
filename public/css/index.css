@@ -1,0 +1,28 @@
+body {
+  font-family: "Yu-Gothic";
+}
+
+main {
+  margin: 80px 90px 0;
+}
+
+.shops {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shop {
+  width: 23%;
+  margin-bottom: 30px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.shop_img img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
