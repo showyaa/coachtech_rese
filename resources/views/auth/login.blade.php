@@ -1,5 +1,6 @@
 @include('layouts.header')
 <x-guest-layout>
+    <link rel="stylesheet" href="/css/login.css">
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">

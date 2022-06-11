@@ -5,6 +5,9 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MyPageController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ThanksController;
+
 
 
 /*
@@ -22,9 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/logout', [LogoutController::class, 'logout']);
 
 require __DIR__.'/auth.php';
 
@@ -42,4 +43,4 @@ Route::post('/reserve', [ReservationController::class, 'create']);
 Route::post('/reserve/delete', [ReservationController::class, 'delete']);
 Route::post('/done', [ReservationController::class, 'done']);
 
-Route::post('/thanks', [ThanksController::class, 'thanks']);
+Route::get('/thanks', [ThanksController::class, 'thanks']);

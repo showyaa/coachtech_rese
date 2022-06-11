@@ -25,9 +25,17 @@
   </div>
   <div class="reservation">
     <p>予約</p>
-    <input type="date">
-    <input type="time">
-    <input type="number">
+    @if(Auth::check())
+    <form action="/reserve" method="POST">
+      @csrf
+      <input type="hidden" name="user_id" value="{{$user->id}}">
+      <input type="hidden" name="shop_id" value="{{$shop->id}}">
+      <input type="date" name="start_at">
+      <input type="time" name="start_at">
+      <input type="number" min="1" max="8" name="num_of_users">
+      <input type="submit" value="予約する">
+    </form>
+    @endif
   </div>
 </body>
 
