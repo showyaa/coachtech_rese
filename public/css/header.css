@@ -17,8 +17,14 @@ header {
   cursor: pointer;
 }
 
+.outline  {
+  color: blue;
+}
 a {
   text-decoration: none;
+}
+.outline:visited {
+  color: inherit;
 }
 
 .nav {

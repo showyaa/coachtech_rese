@@ -16,6 +16,7 @@ class Reservation extends Model
         'start_at',
     ];
 
+
     public function shop() {
         return $this->belongsTo('App\Models\Shop');
     }

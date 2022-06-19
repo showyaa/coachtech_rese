@@ -1,0 +1,33 @@
+a:visited {
+  color: inherit;
+}
+
+.content {
+  display: flex;
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.shop_detail {
+  width: 50%;
+}
+
+.shop_img img {
+  width: 100%;
+}
+
+.shop_name {
+  margin-bottom: 30px;
+}
+
+.back_btn {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.51);
+  border: none;
+  cursor: pointer;
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px 10px;
+}

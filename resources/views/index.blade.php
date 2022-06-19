@@ -12,6 +12,24 @@
 
 <body>
   @include('layouts.header')
+  <div class="search">
+    <form action="/search" method="get">
+      <select name="area" id="area">
+        <option value="">All area</option>
+        @foreach($areas as $area)
+        <option value="{{$area->id}}">{{$area->area}}</option>
+        @endforeach
+      </select>
+      <select name="genre" id="genre">
+        <option value="">All genre</option>
+        @foreach($genres as $genre)
+        <option value="{{$genre->id}}">{{$genre->genre}}</option>
+        @endforeach
+      </select>
+      <input type="text" name="name" value="">
+      <input type="submit" value="検索">
+    </form>
+  </div>
   <main>
     <div class="shops">
       @foreach($shops as $shop)
@@ -26,44 +44,119 @@
             {{$shop->name}}
           </div>
           <div class="tag">
-            <p class="shop_area">{{$shop->area->area}}</p>
-            <p class="shop_tag">{{$shop->genre->genre}}</p>
+            <form action="/search" method="get">
+              <input type="hidden" value="{{$shop->area->id}}" name="area">
+              <button>#{{$shop->area->area}}</button>
+            </form>
+            <form action="/search" method="get">
+              <input type="hidden" value="{{$shop->genre->id}}" name="genre">
+              <button>#{{$shop->genre->genre}}</button>
+            </form>
           </div>
-          <div class="shop_detail">
+          <div class="shop_detail_btn">
             <a href="/detail/{{$shop->id}}">詳しく見る</a>
           </div>
           <div class="like_btn">
             <span>
-              @if(Auth::check())
+            @if(Auth::check())
               @if($shop->is_liked_by_auth_user())
-              <form id="form{{$shop->id}}" action="/like/delete" method="POST">
+              <form id="form{{$shop->id}}1" action="/like/delete" method="POST" class="like_delete_form1" target="send">
                 @csrf
                 <input type="hidden" name="shop_id" value="{{$shop->id}}">
                 <input type="hidden" name="user_id" value="{{$user->id}}">
-                <button class="like_delete">
+                <button class="like_delete" id="like_delete{{$shop->id}}">
                   <img src="\img\icon_140180_256.png" width="30px" alt="">
                 </button>
               </form>
-              @else
-              <form id="form{{$shop->id}}" action="/like" method="POST" target="send">
+              <form id="form{{$shop->id}}2" action="/like" method="POST" target="send" class="like_create_form1">
                 @csrf
                 <input type="hidden" name="shop_id" value="{{$shop->id}}">
                 <input type="hidden" name="user_id" value="{{$user->id}}">
-                <button class="like_create">
+                <button class="like_create" id="like_create{{$shop->id}}">
                   <img src="\img\icon_140220_256.png" width="30px" alt="">
                 </button>
               </form>
-              @endif
-              <!-- <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>
+              <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>
               <script>
-                const $form = $('#form{{$shop->id}}')
-                $('.like_create').on('click', evt => {
-                  $form.submit()
-                  $form[0].reset()
-                  return false
+                const likeCreateBtn1{{$shop->id}} = document.getElementById('like_create{{$shop->id}}');
+                const likeDeleteBtn1{{$shop->id}} = document.getElementById('like_delete{{$shop->id}}')
+                const form1{{$shop->id}} = document.getElementById('form{{$shop->id}}1');
+                const form2{{$shop->id}} = document.getElementById('form{{$shop->id}}2');
+
+                likeCreateBtn1{{$shop->id}}.addEventListener('click', () => {
+                  form2{{$shop->id}}.style.display = 'none';
+                  form1{{$shop->id}}.style.display = 'block';
                 })
-              </script> -->
+                likeDeleteBtn1{{$shop->id}}.addEventListener('click', () => {
+                  form2{{$shop->id}}.style.display = 'block';
+                  form1{{$shop->id}}.style.display = 'none';
+                })
+              </script>
+              <style>
+                .like_create_form1 {
+                  display: none;
+                }
+                .like_delete_form1 {
+                  display: block;
+                }
+              </style>
+              @else
+              <form id="form{{$shop->id}}3" action="/like" method="POST" target="send" class="like_create_form2">
+                @csrf
+                <input type="hidden" name="shop_id" value="{{$shop->id}}">
+                <input type="hidden" name="user_id" value="{{$user->id}}">
+                <button class="like_create" id="like_create{{$shop->id}}2">
+                  <img src="\img\icon_140220_256.png" width="30px" alt="">
+                </button>
+              </form>
+              <form id="form{{$shop->id}}4" action="/like/delete" method="POST" class="like_delete_form2" target="send">
+                @csrf
+                <input type="hidden" name="shop_id" value="{{$shop->id}}">
+                <input type="hidden" name="user_id" value="{{$user->id}}">
+                <button class="like_delete" id="like_delete{{$shop->id}}2">
+                  <img src="\img\icon_140180_256.png" width="30px" alt="">
+                </button>
+              </form>
+              <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>
+              <script>
+                const likeCreateBtn2{{$shop->id}} = document.getElementById('like_create{{$shop->id}}2');
+                const likeDeleteBtn2{{$shop->id}} = document.getElementById('like_delete{{$shop->id}}2')
+                const form3{{$shop->id}} = document.getElementById('form{{$shop->id}}3');
+                const form4{{$shop->id}} = document.getElementById('form{{$shop->id}}4');
+
+                likeCreateBtn2{{$shop->id}}.addEventListener('click', () => {
+                  form3{{$shop->id}}.style.display = 'none';
+                  form4{{$shop->id}}.style.display = 'block';
+                })
+                likeDeleteBtn2{{$shop->id}}.addEventListener('click', () => {
+                  form3{{$shop->id}}.style.display = 'block';
+                  form4{{$shop->id}}.style.display = 'none';
+                })
+
+
+                // const $form = $('#form{{$shop->id}}')
+                // $('.like_create').on('click', evt => {
+                //   $form.submit()
+                //   $form[0].reset()
+                //   return false
+                // })
+              </script>
+              <style>
+                .like_create_form2 {
+                  display: block;
+                }
+                .like_delete_form2 {
+                  display: none;
+                }
+              </style>
               @endif
+            @else
+              <button class="like_create">
+                <a href="/register">
+                <img src="\img\icon_140220_256.png" width="30px" alt="">
+                </a>
+              </button>
+            @endif
             </span>
           </div>
         </div>
@@ -71,6 +164,7 @@
       @endforeach
     </div>
   </main>
+    <script src="/js/reload.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,14 @@ body {
   font-family: "Yu-Gothic";
 }
 
+a:visited {
+  color: inherit;
+}
+
+.search {
+  margin-top: 80px;
+}
+
 main {
   margin: 80px 90px 0;
 }
@@ -19,6 +27,10 @@ main {
   margin-bottom: 30px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+}
+
+.shop_detail_btn {
+  color: blue;
 }
 
 .shop_img img {

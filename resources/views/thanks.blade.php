@@ -5,11 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>会員登録完了</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/done.css">
 </head>
 <body>
-  <div>
-    <p>会員登録ありがとうございます</p>
-    <a href="/">ログインする</a>
-  </div>
+  @include('layouts.header')
+  <main>
+    <div>
+      <p>会員登録ありがとうございます</p>
+      <a href="/">ログインする</a>
+    </div>
+  </main>
 </body>
 </html>

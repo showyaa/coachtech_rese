@@ -47,4 +47,5 @@
             </div>
         </form>
     </x-auth-card>
+    <script src="/js/reload.js"></script>
 </x-guest-layout>

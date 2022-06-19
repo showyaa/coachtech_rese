@@ -31,6 +31,7 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/', [ShopController::class, 'index']);
+Route::get('/search', [ShopController::class, 'search']);
 
 Route::get('/detail/{shop}', [ShopController::class, 'detail']);
 
@@ -43,4 +44,4 @@ Route::post('/reserve', [ReservationController::class, 'create']);
 Route::post('/reserve/delete', [ReservationController::class, 'delete']);
 Route::post('/done', [ReservationController::class, 'done']);
 
-Route::get('/thanks', [ThanksController::class, 'thanks']);
+Route::post('/thanks', [ThanksController::class, 'thanks']);

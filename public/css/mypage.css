@@ -1,0 +1,59 @@
+main {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.content { 
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  width: 80%;
+}
+
+.reserved_lists {
+  grid-column: 1/2;
+  margin-right: 70px;
+}
+
+.reserved_list {
+  border: 1px solid black;
+  width: 400px;
+}
+
+th {
+  text-align: left;
+}
+td {
+  padding-left: 20px;
+}
+
+.like_lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 2/3;
+}
+
+.like_lists .shop:nth-child(odd) {
+  margin-right: 70px;
+}
+
+.shop {
+  width: 300px;
+  margin-bottom: 70px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.shop_img img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.shop_detail_btn {
+  color: blue;
+}
