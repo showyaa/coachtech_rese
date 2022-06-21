@@ -1,3 +1,11 @@
+body {
+  font-family: "Yu-Gothic";
+}
+
+header {
+  z-index: 5;
+}
+
 a:visited {
   color: inherit;
 }
@@ -18,8 +26,20 @@ a:visited {
   width: 100%;
 }
 
-.shop_name {
+.detail_top {
+  position: relative;
   margin-bottom: 30px;
+  z-index: 1;
+}
+
+.shop_name {
+  position: absolute;
+  top: -20%;
+  left: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 5px;
+  z-index: 1;
 }
 
 .back_btn {
@@ -30,4 +50,94 @@ a:visited {
   border-radius: 5px;
   text-align: center;
   padding: 5px 10px;
+}
+
+.tag {
+  margin: 20px 0;
+}
+
+.tag .area_tag,
+.genre_tag {
+  display: inline-block;
+}
+
+.area_tag button, .genre_tag button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.text {
+  line-height: 1.5em;
+  font-size: 17.5px;
+}
+
+.reservation {
+  position: relative;
+  color: white;
+  width: 45%;
+  height: 570px;
+  margin-left: 60px;
+  background-color: rgb(81, 81, 254);
+  border-radius: 5px;
+}
+
+.reservation input, .reservation select {
+  display: block;
+  border-radius: 5px;
+}
+
+.but_btn {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.but_btn input, .but_btn select {
+  margin-bottom: 15px;
+  padding: 5px 0;
+  font-size: 15px;
+}
+
+.reserve_ttl {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#start_date {
+  width: 35%;
+}
+
+#start_time, #num_of_users {
+  width: 90%;
+}
+
+
+
+
+
+.confirm {
+  width: 90%;
+  height: 170px;
+  text-align: left;
+  border-radius: 5px;
+  background-color: rgba(91, 162, 248, 0.942);
+}
+
+.confirm table th {
+  padding-top: 20px;
+  padding-right: 50px;
+  padding-left: 20px;
+}
+
+.reserve_btn {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: blue;
+  border: none;
+  padding: 10px 0;
 }

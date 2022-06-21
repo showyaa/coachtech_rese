@@ -35,13 +35,13 @@ Route::get('/search', [ShopController::class, 'search']);
 
 Route::get('/detail/{shop}', [ShopController::class, 'detail']);
 
-Route::get('/mypage', [MyPageController::class, 'mypage']);
+Route::get('/mypage', [MyPageController::class, 'mypage'])->middleware('auth');
 
-Route::post('/like', [LikeController::class, 'create']);
-Route::post('/like/delete', [LikeController::class, 'delete']);
+Route::post('/like', [LikeController::class, 'create'])->middleware('auth');
+Route::post('/like/delete', [LikeController::class, 'delete'])->middleware('auth');
 
-Route::post('/reserve', [ReservationController::class, 'create']);
-Route::post('/reserve/delete', [ReservationController::class, 'delete']);
+Route::post('/reserve', [ReservationController::class, 'create'])->middleware('auth');
+Route::post('/reserve/delete', [ReservationController::class, 'delete'])->middleware('auth');
 Route::post('/done', [ReservationController::class, 'done']);
 
 Route::post('/thanks', [ThanksController::class, 'thanks']);
