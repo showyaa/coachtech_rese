@@ -52,7 +52,7 @@ a:visited {
 }
 
 .reserved_list {
-  background-color: blue;
+  background-color: rgb(50, 50, 250);
   color: white;
   border: 1px solid black;
   width: 30%;
@@ -76,8 +76,15 @@ a:visited {
   border-radius: 50%;
   border: 2px solid white;
   color: white;
-  background-color: blue;
+  background-color: rgb(50, 50, 250);
   font-weight: bold;
+  transition: 0.2s;
+}
+
+.delete_btn:hover {
+  background-color: rgb(14, 14, 166);
+  border: 2px solid rgb(179, 179, 179);
+  color: rgb(179, 179, 179);
 }
 
 .rese_table {
@@ -130,6 +137,11 @@ td {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
+  transition: 0.2s;
+}
+
+.shop_img img:hover {
+  opacity: 0.75;
 }
 
 .shop_content {
@@ -172,10 +184,15 @@ td {
 }
 
 .shop_detail_btn {
-  background-color: blue;
+  background-color: rgb(50, 50, 250);
   color: white;
   border-radius: 5px;
   padding: 0 10px;
+  transition: 0.2s;
+}
+
+.shop_detail_btn:hover {
+  background-color: rgb(39, 39, 198);
 }
 
 .shop_detail_btn:visited {

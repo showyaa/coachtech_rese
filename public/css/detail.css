@@ -50,6 +50,12 @@ a:visited {
   border-radius: 5px;
   text-align: center;
   padding: 5px 10px;
+  transition: 0.2s;
+}
+
+.back_btn:hover {
+  background-color: rgb(172, 170, 170);
+  color: rgba(37, 37, 37, 0.88);
 }
 
 .tag {
@@ -133,6 +139,7 @@ a:visited {
 }
 
 .reserve_btn {
+  cursor: pointer;
   color: white;
   position: absolute;
   bottom: 0;
@@ -140,4 +147,69 @@ a:visited {
   background-color: blue;
   border: none;
   padding: 10px 0;
+  transition: 0.2s;
+}
+
+.reserve_btn:hover {
+  background-color: rgb(2, 2, 179);
+}
+
+.error {
+  width: 90%;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.9;
+  background-color: coral;
+}
+
+
+.not_login_reserve {
+  position: relative;
+  width: 45%;
+  height: 200px;
+  margin-top: 120px;
+  margin-left: 60px;
+  background-color: rgba(91, 162, 248, 0.942);
+  border-radius: 5px;
+}
+
+.message {
+  font-size: 25px;
+  height: 33%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.register,
+.login {
+  background-color: rgb(81, 81, 254);
+  color: white;
+  padding: 30px 40px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.register:hover,
+.login:hover {
+  background-color: rgb(64, 64, 200);
+}
+
+.register {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+}
+
+.login {
+  position: absolute;
+  top: 35%;
+  right: 15%;
 }

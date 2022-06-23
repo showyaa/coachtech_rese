@@ -17,10 +17,10 @@
       <div class="username">{{$user->name}}さん</div>
       <div class="reserved_lists">
             <h3 class="reserve_ttl">予約状況</h3>
-        @foreach($reserved as $reserved_list)
+        @foreach($reserved as $key => $reserved_list)
         <div class="reserved_list">
           <div class="list_top">
-            <p class="num_of_lists">予約</p>
+            <p class="num_of_lists">予約{{$key+1}}</p>
             <form action="/reserve/delete?id={{$reserved_list->id}}" method="post">
               @csrf
               <button class="delete_btn" type="submit">✕</button>

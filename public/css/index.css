@@ -29,7 +29,6 @@ main {
 
 .shops {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
@@ -37,6 +36,7 @@ main {
 
 .shop {
   width: 23%;
+  margin-left: 22px;
   margin-bottom: 30px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -48,6 +48,11 @@ main {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
+  transition: 0.2s;
+}
+
+.shop_img img:hover {
+  opacity: 0.75;
 }
 
 .shop_content {
@@ -88,10 +93,15 @@ main {
 }
 
 .shop_detail_btn {
-  background-color: blue;
+  background-color: rgb(50, 50, 250);
   color: white;
   border-radius: 5px;
   padding: 0 10px;
+  transition: 0.2s;
+}
+
+.shop_detail_btn:hover {
+  background-color: rgb(39, 39, 198);
 }
 
 .shop_detail_btn:visited {

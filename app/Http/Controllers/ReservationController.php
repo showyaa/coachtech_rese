@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReservationRequest;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    public function create(Request $request)
+    public function create(ReservationRequest $request)
     {
         $request['datetime'] = $request['start_date'].''.$request['start_time'];
         $form = $request->all();
