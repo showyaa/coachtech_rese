@@ -73,6 +73,14 @@ main {
   margin-bottom: 10px;
 }
 
+.tag button {
+  color: rgb(114, 113, 113);
+}
+
+.tag button:hover {
+  text-decoration: underline;
+}
+
 .tag .area_tag, .genre_tag {
   display: inline-block;
 }
@@ -101,11 +109,17 @@ main {
 }
 
 .shop_detail_btn:hover {
-  background-color: rgb(39, 39, 198);
+  background-color: rgb(30, 30, 145);
+  color: rgb(160, 160, 160);
 }
 
 .shop_detail_btn:visited {
   color: white;
+}
+
+.shop_detail_btn:visited:hover {
+  background-color: rgb(30, 30, 145);
+  color: rgb(160, 160, 160);
 }
 
 .like_btn {

@@ -103,13 +103,9 @@
           <input type="hidden" name="start_at" id="start_at">
           <select name="num_of_users" id="num_of_users" onchange="NumberCheck()">
             <option value="" disabled selected>人数</option>
-            <?php
-            $count = 1;
-            while ($count <= 10) {
-              print $count . '<option  value="' . $count . '" >' . $count . '</option>';
-              $count++;
-            }
-            ?>
+            @foreach($count_users as $count_user)
+            <option value="{{$count_user}}" @if(old('num_of_users', $input_num) == $count_user) selected @endif>{{$count_user}}</option>
+            @endforeach
           </select>
           <div class="confirm">
             <table class="cofirm_table">
@@ -134,13 +130,13 @@
           @if(count($errors) > 0)
           <div class="error">
             @error('start_date')
-            <div>{{$message}}</div>
+            <div>※{{$message}}</div>
             @enderror
             @error('start_time')
-            <div>{{$message}}</div>
+            <div>※{{$message}}</div>
             @enderror
             @error('num_of_users')
-            <div>{{$message}}</div>
+            <div>※{{$message}}</div>
             @enderror
           </div>
           @endif

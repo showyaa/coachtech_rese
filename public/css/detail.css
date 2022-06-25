@@ -72,6 +72,10 @@ a:visited {
   background-color: white;
   cursor: pointer;
   font-size: 15px;
+  color: rgb(114, 113, 113);
+}
+.area_tag button:hover, .genre_tag button:hover {
+  text-decoration: underline;
 }
 
 .text {
@@ -83,7 +87,7 @@ a:visited {
   position: relative;
   color: white;
   width: 45%;
-  height: 570px;
+  height: 590px;
   margin-left: 60px;
   background-color: rgb(81, 81, 254);
   border-radius: 5px;
@@ -130,6 +134,7 @@ a:visited {
   text-align: left;
   border-radius: 5px;
   background-color: rgba(91, 162, 248, 0.942);
+  padding-bottom: 20px;
 }
 
 .confirm table th {
@@ -161,7 +166,8 @@ a:visited {
   text-align: center;
   font-size: 22px;
   line-height: 1.9;
-  background-color: coral;
+  background-color: white;
+  color: red;
 }
 
 
@@ -169,7 +175,7 @@ a:visited {
   position: relative;
   width: 45%;
   height: 200px;
-  margin-top: 120px;
+  margin-top: 45px;
   margin-left: 60px;
   background-color: rgba(91, 162, 248, 0.942);
   border-radius: 5px;

@@ -167,6 +167,14 @@ td {
   display: inline-block;
 }
 
+.tag button {
+  color: rgb(114, 113, 113);
+}
+
+.tag button:hover {
+  text-decoration: underline;
+}
+
 .detail_like {
   display: flex;
   justify-content: space-between;
@@ -192,11 +200,17 @@ td {
 }
 
 .shop_detail_btn:hover {
-  background-color: rgb(39, 39, 198);
+  background-color: rgb(30, 30, 145);
+  color: rgb(160, 160, 160);
 }
 
 .shop_detail_btn:visited {
   color: white;
+}
+
+.shop_detail_btn:visited:hover {
+  background-color: rgb(30, 30, 145);
+  color: rgb(160, 160, 160);
 }
 
 .like_btn {

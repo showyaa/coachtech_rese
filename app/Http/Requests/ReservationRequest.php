@@ -24,7 +24,7 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            'start_date' => 'required|date_format:Y-m-d',
+            'start_date' => 'required|date_format:Y-m-d|after:today',
             'start_time' => 'required|date_format:-H-i',
             'num_of_users' => 'required|numeric',
         ];
@@ -34,7 +34,10 @@ class ReservationRequest extends FormRequest
     {
         return [
             'start_date.required' => '日付を指定してください',
+            'start_date.date_format' => '日付の形式で入力してください',
+            'start_date.after' => '翌日以降予約が可能です',
             'start_time.required' => '時間を指定してください',
+            'start_time.date_format:-H-i' => '時間の入力が誤っています',
             'num_of_users.required' => '人数を指定してください',
         ];
     }

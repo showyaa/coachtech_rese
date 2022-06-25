@@ -38,17 +38,17 @@
     <form action="/search" method="get">
       <select name="area" id="area">
         <option value="">All area</option>
-        @foreach($areas as $area)
-        <option value="{{$area->id}}" @if(old('area') == $area) selected @endif>{{$area->area}}</option>
+        @foreach($areas as $key => $area)
+        <option value="{{$area->id}}" @if(old('area', $input_area) == $key+1) selected @endif>{{$area->area}}</option>
         @endforeach
       </select>
       <select name="genre" id="genre">
         <option value="">All genre</option>
-        @foreach($genres as $genre)
-        <option value="{{$genre->id}}">{{$genre->genre}}</option>
+        @foreach($genres as $key => $genre)
+        <option value="{{$genre->id}}" @if(old('genre', $input_genre) == $key+1) selected @endif> {{$genre->genre}} </option>
         @endforeach
       </select>
-      <input type="text" name="name" value="">
+      <input type="text" name="name" value="{{$input_name}}">
       <input type="submit" value="検索">
     </form>
   </div>

@@ -13,9 +13,9 @@
 <body>
   @include('layouts.header')
   <main>
-    <div>
-      <p>ご予約ありがとうございます。</p>
-      <a href="/">戻る</a>
+    <div class="content">
+      <p class="message">ご予約ありがとうございます。</p>
+      <a href="/" class="tohome"><button>戻る</button></a>
     </div>
   </main>
 </body>

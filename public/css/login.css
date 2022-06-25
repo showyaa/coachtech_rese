@@ -1,5 +1,72 @@
+body {
+  position: relative;
+}
+
 .font-sans {
   width: 500px;
-  margin: 0 auto;
-  margin-top: 250px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form {
+  background-color: rgba(91, 162, 248, 0.942);
+  border-radius: 5px;
+  padding: 30px 50px;
+}
+
+.email, .password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 20px;
+  color: rgb(65, 64, 64);
+}
+
+.input_email, .input_password {
+  font-size: 20px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.input_email:focus, .input_password:focus {
+  outline: none;
+}
+
+.remember {
+  font-size: 17px;
+}
+
+.forget_and_login {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forget_password {
+  color: white !important;
+}
+
+.login_btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px;
+  border: 1px solid blue;
+  background-color: blue;
+  color: white;
+  transition: 0.2s;
+}
+
+.login_btn:hover {
+  background-color: rgb(30, 30, 145);
+  color: rgb(160, 160, 160);
 }
