@@ -16,8 +16,13 @@ class Reservation extends Model
         'start_at',
     ];
 
+    public function review() {
+        return $this->hasOne('App\Models\Review');
+    }
+
 
     public function shop() {
         return $this->belongsTo('App\Models\Shop');
     }
+
 }

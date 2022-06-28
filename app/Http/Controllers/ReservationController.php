@@ -28,6 +28,14 @@ class ReservationController extends Controller
             
         }
     }
+    
+    public function update(Request $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Reservation::find($request->id)->update($form);
+        return redirect('/mypage');
+    }
 
     public function delete(Request $request)
     {

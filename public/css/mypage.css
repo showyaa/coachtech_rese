@@ -56,7 +56,7 @@ a:visited {
   color: white;
   border: 1px solid black;
   width: 30%;
-  height: 250px;
+  height: 320px;
   margin-bottom: 60px;
   border-radius: 5px;
 }
@@ -92,6 +92,11 @@ a:visited {
   margin: 0 auto;
 }
 
+.rese_table td input, .rese_table td select {
+  width: 100%;
+  text-align: center;
+}
+
 .rese_table th:not(:last-child) {
   padding-bottom: 30px;
 }
@@ -103,6 +108,26 @@ td {
   padding-left: 20px;
 }
 
+.update_btn_div {
+  display: flex;
+  justify-content: center;
+}
+
+.update_btn {
+  background-color: white;
+  color: rgb(250, 177, 50);
+  border: 3px solid rgb(250, 177, 50);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 15px;
+  transition: 0.2s;
+}
+
+.update_btn:hover {
+  background-color: rgb(250, 177, 50);
+  color: white;
+}
 
 
 

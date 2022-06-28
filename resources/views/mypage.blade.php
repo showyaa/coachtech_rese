@@ -26,24 +26,102 @@
               <button class="delete_btn" type="submit">✕</button>
             </form>
           </div>
-          <table class="rese_table">
-            <tr>
-              <th>Shop</th>
-              <td>{{$reserved_list->shop->name}}</td>
-            </tr>
-            <tr>
-              <th>Date</th>
-              <td>{{\Carbon\Carbon::parse($reserved_list->start_at)->format("Y-m-d")}}</td>
-            </tr>
-            <tr>
-              <th>Time</th>
-              <td>{{\Carbon\Carbon::parse($reserved_list->start_at)->format("H:i")}}</td>
-            </tr>
-            <tr>
-              <th>Number</th>
-              <td>{{$reserved_list->num_of_users}}人</td>
-            </tr>
-          </table>
+          <form action="/reserve/update?id={{$reserved_list->id}}" method="post">
+            @csrf
+            <script>
+                function hoge{{$reserved_list->id}}() {
+                  var valueA = document.getElementById("start_date{{$reserved_list->id}}").value;
+                  var valueB = document.getElementById("start_time{{$reserved_list->id}}").value;
+                  document.getElementById("start_at{{$reserved_list->id}}").value = valueA + valueB;
+                };
+            </script>
+            <table class="rese_table">
+              <tr>
+                <th>Shop</th>
+                <td>{{$reserved_list->shop->name}}</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td><input type="date" min="{{$tommorow}}" max="{{$limit}}" name="start_date" id="start_date{{$reserved_list->id}}" onchange="hoge{{$reserved_list->id}}()" value="{{\Carbon\Carbon::parse($reserved_list->start_at)->format("Y-m-d")}}"></td>
+              </tr>
+              <tr>
+                <th>Time</th>
+                <td>
+                  <select name="start_time" id="start_time{{$reserved_list->id}}" onchange="hoge{{$reserved_list->id}}()">
+                    <option value="-{{\Carbon\Carbon::parse($reserved_list->start_at)->format("H:i")}}">{{\Carbon\Carbon::parse($reserved_list->start_at)->format("H:i")}}</option>
+                    <option value="-10-00">10:00</option>
+                    <option value="-10-15">10:15</option>
+                    <option value="-10-30">10:30</option>
+                    <option value="-10-45">10:45</option>
+                    <option value="-11-00">11:00</option>
+                    <option value="-11-15">11:15</option>
+                    <option value="-11-30">11:30</option>
+                    <option value="-11-45">11:45</option>
+                    <option value="-12-00">12:00</option>
+                    <option value="-12-15">12:15</option>
+                    <option value="-12-30">12:30</option>
+                    <option value="-12-45">12:45</option>
+                    <option value="-13-00">13:00</option>
+                    <option value="-13-15">13:15</option>
+                    <option value="-13-30">13:30</option>
+                    <option value="-13-45">13:45</option>
+                    <option value="-14-00">14:00</option>
+                    <option value="-14-15">14:15</option>
+                    <option value="-14-30">14:30</option>
+                    <option value="-14-45">14:45</option>
+                    <option value="-15-00">15:00</option>
+                    <option value="-15-15">15:15</option>
+                    <option value="-15-30">15:30</option>
+                    <option value="-15-45">15:45</option>
+                    <option value="-16-00">16:00</option>
+                    <option value="-16-15">16:15</option>
+                    <option value="-16-30">16:30</option>
+                    <option value="-16-45">16:45</option>
+                    <option value="-17-00">17:00</option>
+                    <option value="-17-15">17:15</option>
+                    <option value="-17-30">17:30</option>
+                    <option value="-17-45">17:45</option>
+                    <option value="-18-00">18:00</option>
+                    <option value="-18-15">18:15</option>
+                    <option value="-18-30">18:30</option>
+                    <option value="-18-45">18:45</option>
+                    <option value="-19-00">19:00</option>
+                    <option value="-19-15">19:15</option>
+                    <option value="-19-30">19:30</option>
+                    <option value="-19-45">19:45</option>
+                    <option value="-20-00">20:00</option>
+                    <option value="-20-00">20:00</option>
+                    <option value="-20-15">20:15</option>
+                    <option value="-20-30">20:30</option>
+                    <option value="-20-45">20:45</option>
+                    <option value="-21-15">21:15</option>
+                    <option value="-21-30">21:30</option>
+                    <option value="-21-45">21:45</option>
+                    <option value="-22-00">22:00</option>
+                    <option value="-22-15">22:15</option>
+                    <option value="-22-30">22:30</option>
+                    <option value="-22-45">22:45</option>
+                    <option value="-23-00">23:00</option>
+                  </select>
+                  <input type="hidden" name="start_at" id="start_at{{$reserved_list->id}}" value="{{$reserved_list->start_at}}">
+                </td>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <td>
+                  <select name="num_of_users">
+                    <option value="{{$reserved_list->num_of_users}}">{{$reserved_list->num_of_users}}</option>
+                    @foreach($count_users as $count_user)
+                    <option value="{{$count_user}}">{{$count_user}}</option>
+                    @endforeach
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <div class="update_btn_div">
+              <input type="submit" class="update_btn" value="更新">
+            </div>
+          </form>
         </div>
         @endforeach
       </div>

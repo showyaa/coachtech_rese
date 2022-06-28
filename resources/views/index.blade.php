@@ -19,6 +19,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/logout">Logout</a></li>
       <li><a href="/mypage">Mypage</a></li>
+      <li><a href="/review">Review</a></li>
     </ul>
     @else
     <ul class="outline">
