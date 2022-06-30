@@ -19,6 +19,10 @@ a:visited {
   right: 90px;
 }
 
+.search_768 {
+  display: none;
+}
+
 .search input, .search select {
   padding: 5px;
 }
@@ -30,13 +34,13 @@ main {
 .shops {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .shop {
-  width: 23%;
-  margin-left: 22px;
+  width: 250px;
   margin-bottom: 30px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -124,4 +128,47 @@ main {
 
 .like_btn {
   padding-top: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .menu {
+    margin-left: 30px;
+  }
+
+  .title {
+    left: 50px;
+  }
+
+  main {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 70px;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .search_768 {
+    display: block;
+  }
+
+  .input_name {
+    width: 30%;
+  }
+
+  .shops {
+    margin-top: 20px;
+  }
+
+  .shop {
+    width: 100%;
+  }
+
+  .shop_img img {
+    height: 20vh;
+  }
+  
 }

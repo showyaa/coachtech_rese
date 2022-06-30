@@ -101,3 +101,15 @@ a:visited {
 .in {
   transform: translateX(100%);
 }
+
+
+@media screen and (max-width: 768px) {
+  
+  .menu {
+      margin-left: 30px;
+    }
+  
+  .title {
+    left: 60px;
+  }
+}

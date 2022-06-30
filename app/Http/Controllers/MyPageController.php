@@ -14,7 +14,7 @@ class MyPageController extends Controller
         $likes = Like::where('user_id', auth()->user()->id)->get();
         $tommorow = date('Y-m-d', strtotime('+1 day'));
         $limit = date('Y-m-d', strtotime('+90 day'));
-        $reserved = Reservation::where('user_id', auth()->user()->id)->where('start_at', '>=', date('Y-m-d'))->get();
+        $reserved = Reservation::where('user_id', auth()->user()->id)->where('start_at', '>=', date('Y-m-d H:i'))->get();
         $user = Auth::user();
         $input_num = $request->num_of_users;
         $count_users = range(1, 10);

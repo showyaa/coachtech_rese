@@ -241,3 +241,52 @@ td {
 .like_btn {
   padding-top: 20px;
 }
+
+
+@media screen and (max-width: 768px) {
+
+
+  .username {
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .reserved_lists {
+    position: relative;
+    margin: 0 auto;
+    top: 40px;
+  }
+
+  .reserve_ttl {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .reserved_list {
+    width: 100%;
+  }
+
+  .like_lists {
+    position: inherit;
+    left: 0;
+    width: 100%;
+  }
+
+  .like_ttl {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .like_lists_flex {
+    display: block;
+  }
+
+  .like_lists .shop:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .shop {
+    width: 100%;
+  }
+}

@@ -14,7 +14,8 @@
   @include('layouts.header')
   <main>
     <div class="review_title">レビュー</div>
-    @foreach($review_lists as $review_list)
+    <div class="review_lists">
+      @foreach($review_lists as $review_list)
       @empty($review_list->review)
       <div class="review_list">
         <div class="shop_img">
@@ -34,19 +35,54 @@
           <input type="hidden" value="{{$review_list->id}}" name="reservation_id">
           <div class="stars">
             <span>
-              <input id="review01" type="radio" name="star" value="5"><label for="review01">★</label>
-              <input id="review02" type="radio" name="star" value="4"><label for="review02">★</label>
-              <input id="review03" type="radio" name="star" value="3"><label for="review03">★</label>
-              <input id="review04" type="radio" name="star" value="2"><label for="review04">★</label>
-              <input id="review05" type="radio" name="star" value="1"><label for="review05">★</label>
+              <input id="review01{{$review_list->id}}" type="radio" name="star" value="5"><label for="review01{{$review_list->id}}">★</label>
+              <input id="review02{{$review_list->id}}" type="radio" name="star" value="4"><label for="review02{{$review_list->id}}">★</label>
+              <input id="review03{{$review_list->id}}" type="radio" name="star" value="3"><label for="review03{{$review_list->id}}">★</label>
+              <input id="review04{{$review_list->id}}" type="radio" name="star" value="2"><label for="review04{{$review_list->id}}">★</label>
+              <input id="review05{{$review_list->id}}" type="radio" name="star" value="1"><label for="review05{{$review_list->id}}">★</label>
             </span>
           </div>
           <textarea name="comment" id="" cols="25" rows="7" class="comment"></textarea>
           <input type="submit" value="送信" class="review_btn">
         </form>
       </div>
+      <style>
+        .stars span {
+          display: flex;
+          /* 要素をフレックスボックスにする */
+          flex-direction: row-reverse;
+          /* 星を逆順に並べる */
+          justify-content: flex-end;
+          /* 逆順なので、左寄せにする */
+        }
+
+        .stars input[type='radio'] {
+          display: none;
+          /* デフォルトのラジオボタンを非表示にする */
+        }
+
+        .stars label {
+          color: #D2D2D2;
+          /* 未選択の星をグレー色に指定 */
+          font-size: 30px;
+          /* 星の大きさを30pxに指定 */
+          padding: 0 5px;
+          /* 左右の余白を5pxに指定 */
+          cursor: pointer;
+          /* カーソルが上に乗ったときに指の形にする */
+          transition: 0.3s;
+        }
+
+        .stars label:hover,
+        .stars label:hover~label,
+        .stars input[type='radio']:checked~label {
+          color: #F8C601;
+          /* 選択された星以降をすべて黄色にする */
+        }
+      </style>
       @endempty
-    @endforeach
+      @endforeach
+    </div>
   </main>
 </body>
 
