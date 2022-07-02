@@ -8,6 +8,7 @@ use App\Models\Shop;
 use App\Models\Like;
 use App\Models\Area;
 use App\Models\Genre;
+use App\Models\Reservation;
 
 class ShopController extends Controller
 {
@@ -61,6 +62,7 @@ class ShopController extends Controller
         $limit = date('Y-m-d', strtotime('+90 day'));
         $count_users = range(1, 10);
         $input_num = $request->num_of_users;
+        $reservations = Reservation::where('shop_id', $shop->id)->get();
 
         $param = [
             'user' => $user,
@@ -69,6 +71,7 @@ class ShopController extends Controller
             'shop' => $shop,
             'count_users' => $count_users,
             'input_num' => $input_num,
+            'reservations' => $reservations,
         ];
 
         return view('detail', $param);

@@ -34,13 +34,24 @@ main {
 .shops {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.shops::after {
+  content: "";
+  display: block;
+  width: 23%;
+}
+
+.shops::before {
+  content: "";
+  display: block;
+  width: 23%;
+  order: 1;
 }
 
 .shop {
-  width: 250px;
+  width: 23%;
   margin-bottom: 30px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;

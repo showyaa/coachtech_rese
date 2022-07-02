@@ -39,6 +39,7 @@ class ReservationRequest extends FormRequest
             'start_time.required' => '時間を指定してください',
             'start_time.date_format:-H-i' => '時間の入力が誤っています',
             'num_of_users.required' => '人数を指定してください',
+            'num_of_users.numeric' => '人数は数値を入力してください',
         ];
     }
 }

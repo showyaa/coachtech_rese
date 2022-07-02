@@ -42,7 +42,7 @@
               <input id="review05{{$review_list->id}}" type="radio" name="star" value="1"><label for="review05{{$review_list->id}}">★</label>
             </span>
           </div>
-          <textarea name="comment" id="" cols="25" rows="7" class="comment"></textarea>
+          <textarea name="comment" id="" cols="25" rows="10" class="comment"></textarea>
           <input type="submit" value="送信" class="review_btn">
         </form>
       </div>

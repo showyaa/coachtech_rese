@@ -70,3 +70,36 @@ label {
   background-color: rgb(30, 30, 145);
   color: rgb(160, 160, 160);
 }
+
+
+@media screen and (max-width: 768px) {
+  .font-sans {
+    width: 90%;
+  }
+
+  .email, .password {
+    display: block;
+  }
+
+  .forget_and_login {
+    display: block;
+  }
+
+  .forget_password {
+    display: block;
+  }
+
+  label {
+    display: block;
+  }
+
+  .input_email, .input_password {
+    width: 100%;
+  }
+
+  .login_btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}

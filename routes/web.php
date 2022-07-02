@@ -21,9 +21,6 @@ use App\Models\Review;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
