@@ -160,7 +160,7 @@
                 <input type="hidden" name="shop_id" value="{{$like->shop_id}}">
                 <input type="hidden" name="user_id" value="{{$user->id}}">
                 <button class="like_delete" id="like_delete{{$like->id}}">
-                  <img src="\img\icon_140180_256.png" width="30px" alt="">
+                  ❤
                 </button>
               </form>
               <form id="form{{$like->id}}2" action="/like" method="POST" target="send" class="like_create_form1">
@@ -168,7 +168,7 @@
                 <input type="hidden" name="shop_id" value="{{$like->shop_id}}">
                 <input type="hidden" name="user_id" value="{{$user->id}}">
                 <button class="like_create" id="like_create{{$like->id}}">
-                  <img src="\img\icon_140220_256.png" width="30px" alt="">
+                  ❤
                 </button>
               </form>
               <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>
@@ -201,7 +201,7 @@
                 <input type="hidden" name="shop_id" value="{{$like->shop_id}}">
                 <input type="hidden" name="user_id" value="{{$like->id}}">
                 <button class="like_create" id="like_create{{$like->id}}2">
-                  <img src="\img\icon_140220_256.png" width="30px" alt="">
+                  ❤
                 </button>
               </form>
               <form id="form{{$like->id}}4" action="/like/delete" method="POST" class="like_delete_form2" target="send">
@@ -209,7 +209,7 @@
                 <input type="hidden" name="shop_id" value="{{$like->shop_id}}">
                 <input type="hidden" name="user_id" value="{{$user->id}}">
                 <button class="like_delete" id="like_delete{{$like->id}}2">
-                  <img src="\img\icon_140180_256.png" width="30px" alt="">
+                  ❤
                 </button>
               </form>
               <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>

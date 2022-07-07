@@ -242,6 +242,16 @@ td {
   padding-top: 20px;
 }
 
+.like_create {
+  color: gray;
+  font-size: 40px;
+}
+
+.like_delete {
+  color: red;
+  font-size: 40px;
+}
+
 
 @media screen and (max-width: 768px) {
 

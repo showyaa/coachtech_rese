@@ -106,7 +106,7 @@
                   <input type="hidden" name="shop_id" value="{{$shop->id}}">
                   <input type="hidden" name="user_id" value="{{$user->id}}">
                   <button class="like_delete" id="like_delete{{$shop->id}}">
-                    <img src="\img\icon_140180_256.png" width="30px" alt="">
+                    ❤
                   </button>
                 </form>
                 <form id="form{{$shop->id}}2" action="/like" method="POST" target="send" class="like_create_form1">
@@ -114,7 +114,7 @@
                   <input type="hidden" name="shop_id" value="{{$shop->id}}">
                   <input type="hidden" name="user_id" value="{{$user->id}}">
                   <button class="like_create" id="like_create{{$shop->id}}">
-                    <img src="\img\icon_140220_256.png" width="30px" alt="">
+                    ❤
                   </button>
                 </form>
                 <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>
@@ -126,10 +126,10 @@
 
                   likeCreateBtn1{{$shop->id}}.addEventListener('click', () => {
                     form2{{$shop->id}}.style.display = 'none';
-                    form1{{$shop->id}}.style.display = 'block';
+                    form1{{$shop->id}}.style.display = 'flex';
                   })
                   likeDeleteBtn1{{$shop->id}}.addEventListener('click', () => {
-                    form2{{$shop->id}}.style.display = 'block';
+                    form2{{$shop->id}}.style.display = 'flex';
                     form1{{$shop->id}}.style.display = 'none';
                   })
                 </script>
@@ -138,7 +138,7 @@
                     display: none;
                   }
                   .like_delete_form1 {
-                    display: block;
+                    display: flex;
                   }
                 </style>
                 @else
@@ -147,7 +147,7 @@
                   <input type="hidden" name="shop_id" value="{{$shop->id}}">
                   <input type="hidden" name="user_id" value="{{$user->id}}">
                   <button class="like_create" id="like_create{{$shop->id}}2">
-                    <img src="\img\icon_140220_256.png" width="30px" alt="">
+                    ❤
                   </button>
                 </form>
                 <form id="form{{$shop->id}}4" action="/like/delete" method="POST" class="like_delete_form2" target="send">
@@ -155,7 +155,7 @@
                   <input type="hidden" name="shop_id" value="{{$shop->id}}">
                   <input type="hidden" name="user_id" value="{{$user->id}}">
                   <button class="like_delete" id="like_delete{{$shop->id}}2">
-                    <img src="\img\icon_140180_256.png" width="30px" alt="">
+                    ❤
                   </button>
                 </form>
                 <iframe name="send" style="width: 0px; height: 0px; border: 0px;"></iframe>
@@ -167,10 +167,10 @@
 
                   likeCreateBtn2{{$shop->id}}.addEventListener('click', () => {
                     form3{{$shop->id}}.style.display = 'none';
-                    form4{{$shop->id}}.style.display = 'block';
+                    form4{{$shop->id}}.style.display = 'flex';
                   })
                   likeDeleteBtn2{{$shop->id}}.addEventListener('click', () => {
-                    form3{{$shop->id}}.style.display = 'block';
+                    form3{{$shop->id}}.style.display = 'flex';
                     form4{{$shop->id}}.style.display = 'none';
                   })
 
@@ -184,7 +184,7 @@
                 </script>
                 <style>
                   .like_create_form2 {
-                    display: block;
+                    display: flex;
                   }
                   .like_delete_form2 {
                     display: none;
@@ -194,7 +194,7 @@
               @else
                 <button class="like_create">
                   <a href="/register">
-                  <img src="\img\icon_140220_256.png" width="30px" alt="">
+                  ❤
                   </a>
                 </button>
               @endif

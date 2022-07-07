@@ -137,8 +137,32 @@ main {
   color: rgb(160, 160, 160);
 }
 
-.like_btn {
-  padding-top: 20px;
+
+.like_create {
+  color: gray;
+  font-size: 40px;
+}
+
+.like_btn span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.like_btn form {
+  height: 100%;
+  align-items: center;
+}
+
+.like_btn button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.like_delete {
+  color: red;
+  font-size: 40px;
 }
 
 
