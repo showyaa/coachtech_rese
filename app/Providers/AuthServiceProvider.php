@@ -31,12 +31,12 @@ class AuthServiceProvider extends ServiceProvider
 
         // Adminユーザー
         Gate::define('isAdmin', function ($user) {
-            return ($user->role == 3);
+            return ($user->role >0 && $user->role <= 3);
         });
 
         // 一般ユーザー
         Gate::define('isGeneral', function ($user) {
-            return ($user->role == 5);
+            return ($user->role > 0 && $user->role <= 5);
         });
     }
 }
