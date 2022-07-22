@@ -51,15 +51,14 @@ Route::post('/review/create', [ReviewController::class, 'create'])->middleware('
 Route::post('/review/done', [ReviewController::class, 'done'])->middleware('auth');
 
 Route::group(['middleware' => ['can:isManager']], function() {
-  Route::get('/edit/{shop}', [ManageController::class, 'index']);
-  Route::post('/edit/update', [ManageController::class, 'update']);
-  Route::post('/edit/delete', [ManageController::class, 'delete']);
   Route::get('/create', [ManageController::class, 'create_view']);
   Route::post('/add', [ManageController::class, 'create']);
 });
 
 
 Route::group(['middleware' => ['can:isAdmin']], function() {
+  Route::get('/edit/{shop}', [ManageController::class, 'index']);
+  Route::post('/edit/update', [ManageController::class, 'update']);
   Route::get('/admin', [AdminController::class, 'index']);
   Route::get('/admin/reservation', [AdminController::class, 'reservation']);
   Route::post('/admin/upsert', [AdminController::class, 'upsert']);
