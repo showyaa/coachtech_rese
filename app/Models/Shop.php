@@ -14,13 +14,15 @@ class Shop extends Model
         'name',
         'area_id',
         'genre_id',
+        'user_id',
         'description',
         'image_url',
     ];
 
     public function reservations()
     {
-        return $this->hasMany('App\Models\Reservation');
+        $limit_time = date('Y-m-d H:i', strtotime('-1 hour'));
+        return $this->hasMany('App\Models\Reservation')->orderBy('start_at', 'asc')->where('start_at', '>=', $limit_time);
     }
     public function likes()
     {
@@ -33,6 +35,10 @@ class Shop extends Model
 
     public function genre() {
         return $this->belongsTo('App\Models\Genre');
+    }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
     }
 
 

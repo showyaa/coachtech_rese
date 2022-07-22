@@ -8,6 +8,12 @@
       <li><a href="/logout">Logout</a></li>
       <li><a href="/mypage">Mypage</a></li>
       <li><a href="/review">Review</a></li>
+      @can('isManager')
+      <li><a href="">店舗作成</a></li>
+      <li><a href="/admin/register">店舗代表者作成</a></li>
+      @elsecan('isAdmin')
+      <li><a href="/admin">店舗作成・更新</a></li>
+      @endcan
     </ul>
     @else
     <ul class="outline">
@@ -23,5 +29,11 @@
     <span class="menu__line--bottom"></span>
   </div>
   <div class="title"><a href="/index.php">Rese</a></div>
+  @can('isAdmin')
+  <div class="confirm_reservation"> <a href="/admin/reservation">予約情報</a> </div>
+  @endcan
+  @can('isManager')
+  <div class="confirm_reservation"> <a href="/admin/reservation">予約情報</a> </div>
+  @endcan
 </header>
 <script src="/js/header.js"></script>

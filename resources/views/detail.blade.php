@@ -60,7 +60,7 @@
                 @break
                 @endswitch
               </p>
-              <p class="created_date">{{$reservation->user->name}}{{\Carbon\Carbon::parse($reservation->review->created_at)->format("Y年m月d日")}}</p>
+              <p class="created_date">{{$reservation->user->name}} {{\Carbon\Carbon::parse($reservation->review->created_at)->format("Y年m月d日")}}</p>
             </div>
             <p class="review_content">{{$reservation->review->comment}}</p>
           </div>

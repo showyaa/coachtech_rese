@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MyPageController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ManageController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ThanksController;
 use App\Models\Review;
@@ -46,3 +48,17 @@ Route::post('/thanks', [ThanksController::class, 'thanks']);
 Route::get('/review', [ReviewController::class, 'review'])->middleware('auth');
 Route::post('/review/create', [ReviewController::class, 'create'])->middleware('auth');
 Route::post('/review/done', [ReviewController::class, 'done'])->middleware('auth');
+
+
+Route::get('/edit/{shop}', [ManageController::class, 'index']);
+Route::post('/edit/update', [ManageController::class, 'update']);
+Route::post('/edit/delete', [ManageController::class, 'delete']);
+Route::get('/create', [ManageController::class, 'create_view']);
+Route::post('/add', [ManageController::class, 'create']);
+
+
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/reservation', [AdminController::class, 'reservation']);
+Route::post('/admin/upsert', [AdminController::class, 'upsert']);
+Route::post('/admin/create', [AdminController::class, 'create']);
+Route::post('/admin/update', [AdminController::class, 'update']);

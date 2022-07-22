@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -45,7 +46,12 @@ class User extends Authenticatable
     public function reservations() {
         return $this->hasMany('App\Models\Reservation');
     }
+
     public function likes() {
         return $this->hasMany('App\Models\Like');
+    }
+
+    public function shops() {
+        return $this->hasMany('App\Models\Shop');
     }
 }

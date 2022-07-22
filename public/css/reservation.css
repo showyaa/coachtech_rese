@@ -1,0 +1,33 @@
+body {
+  position: relative;
+  height: 100vh;
+}
+
+.content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.shop_name {
+  width: 30%;
+  text-align: center;
+}
+
+.reservations {
+  margin-bottom: 30px;
+}
+
+.reservations table {
+  width: 30%;
+}
+
+.reservations table tr:first-child {
+  border-bottom: 1px solid black;
+}
+
+.reservations table td {
+  text-align: center;
+}

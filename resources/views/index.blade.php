@@ -20,6 +20,12 @@
       <li><a href="/logout">Logout</a></li>
       <li><a href="/mypage">Mypage</a></li>
       <li><a href="/review">Review</a></li>
+      @can('isManager')
+      <li><a href="/create">店舗作成</a></li>
+      <li><a href="/admin/register">店舗代表者作成</a></li>
+      @elsecan('isAdmin')
+      <li><a href="/admin">店舗作成・更新</a></li>
+      @endcan
     </ul>
     @else
     <ul class="outline">
@@ -34,7 +40,15 @@
     <span class="menu__line--middle"></span>
     <span class="menu__line--bottom"></span>
   </div>
-  <div class="title"><a href="/index.php">Rese</a></div>
+  <div class="title">
+    <a href="/index.php">Rese</a>
+  </div>
+  @can('isAdmin')
+    <div class="confirm_reservation"> <a href="/admin/reservation">予約情報</a> </div>
+  @endcan
+  @can('isManager')
+    <div class="confirm_reservation"><a href="/admin/reservation">予約情報</a></div>
+  @endcan
   <div class="search">
     <form action="/search" method="get">
       <select name="area" id="area">
@@ -82,9 +96,31 @@
           </a>
         </div>
         <div class="shop_content">
+          @can('isManager')
+          <div class="shop_content_top">
+            <p>{{$shop->name}}</p>
+            <a href="/edit/{{$shop->id}}"><button>編集する</button></a>
+          </div>
+          @elsecan('isAdmin')
+            @if($shop->user->id == $user->id)
+              <div class="shop_content_top">
+                <p>{{$shop->name}}</p>
+                <a href="/edit/{{$shop->id}}"><button>編集する</button></a>
+              </div>
+            @else
+              <div class="shop_name">
+                {{$shop->name}}
+              </div>
+            @endif
+          @elsecan('isGeneral')
           <div class="shop_name">
             {{$shop->name}}
           </div>
+          @else
+          <div class="shop_name">
+            {{$shop->name}}
+          </div>
+          @endcan
           <div class="tag">
             <form action="/search" method="get" class="area_tag">
               <input type="hidden" value="{{$shop->area->id}}" name="area">

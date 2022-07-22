@@ -43,6 +43,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 5,
         ]);
 
         event(new Registered($user));
@@ -50,5 +51,29 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return view('thanks');
+    }
+
+    // Adminユーザー
+    public function createAdmin()
+    {
+        return view('auth.register-admin');
+    }
+
+    public function storeAdmin(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 3,
+        ]);
+
+        return redirect(RouteServiceProvider::HOME);
     }
 }

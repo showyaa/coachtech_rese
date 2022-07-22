@@ -54,3 +54,13 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+
+
+// Adminユーザー登録
+Route::group(['middleware' => ['auth', 'can:isManager']], function () {
+    Route::get('/admin/register', [RegisteredUserController::class, 'createAdmin'])
+        ->name('register-admin');
+
+    Route::post('/admin/register', [RegisteredUserController::class, 'storeAdmin']);
+});
+

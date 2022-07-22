@@ -2,6 +2,7 @@ body {
   font-family: "Yu-Gothic";
 }
 
+
 button {
   border: none;
   background-color: white;
@@ -72,6 +73,30 @@ main {
 
 .shop_content {
   margin: 15px 0;
+}
+
+.shop_content_top {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop_content_top button {
+  cursor: pointer;
+  border: 2px solid rgb(43, 142, 4);
+  background-color: white;
+  color: rgb(43, 142, 4);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.shop_content_top button:hover {
+  color: white;
+  background-color: rgb(43, 142, 4);
 }
 
 .shop_name {
@@ -168,12 +193,18 @@ main {
 
 @media screen and (max-width: 768px) {
 
+
   .menu {
     margin-left: 30px;
   }
 
   .title {
     left: 50px;
+  }
+
+  .confirm_reservation {
+    right: 10%;
+    left: unset;
   }
 
   main {
