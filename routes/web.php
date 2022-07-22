@@ -11,6 +11,7 @@ use App\Http\Controllers\ManageController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ThanksController;
 use App\Models\Review;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,16 +50,19 @@ Route::get('/review', [ReviewController::class, 'review'])->middleware('auth');
 Route::post('/review/create', [ReviewController::class, 'create'])->middleware('auth');
 Route::post('/review/done', [ReviewController::class, 'done'])->middleware('auth');
 
+Route::group(['middleware' => ['can:isManager']], function() {
+  Route::get('/edit/{shop}', [ManageController::class, 'index']);
+  Route::post('/edit/update', [ManageController::class, 'update']);
+  Route::post('/edit/delete', [ManageController::class, 'delete']);
+  Route::get('/create', [ManageController::class, 'create_view']);
+  Route::post('/add', [ManageController::class, 'create']);
+});
 
-Route::get('/edit/{shop}', [ManageController::class, 'index']);
-Route::post('/edit/update', [ManageController::class, 'update']);
-Route::post('/edit/delete', [ManageController::class, 'delete']);
-Route::get('/create', [ManageController::class, 'create_view']);
-Route::post('/add', [ManageController::class, 'create']);
 
-
-Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/admin/reservation', [AdminController::class, 'reservation']);
-Route::post('/admin/upsert', [AdminController::class, 'upsert']);
-Route::post('/admin/create', [AdminController::class, 'create']);
-Route::post('/admin/update', [AdminController::class, 'update']);
+Route::group(['middleware' => ['can:isAdmin']], function() {
+  Route::get('/admin', [AdminController::class, 'index']);
+  Route::get('/admin/reservation', [AdminController::class, 'reservation']);
+  Route::post('/admin/upsert', [AdminController::class, 'upsert']);
+  Route::post('/admin/create', [AdminController::class, 'create']);
+  Route::post('/admin/update', [AdminController::class, 'update']);
+});
